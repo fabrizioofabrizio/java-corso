@@ -18,33 +18,20 @@ public class Ufficio1 {
 
 
 //--------ATTIRUBUTI-------------------
-Impiegato [] arrImp = {
-//	new Impiegato ("fabry", "priami", 1000),
-//	new Impiegato ("massy", "russo", 2000),
-//	new Impiegato ("simo", "renna", 3000)
-	}; 
-
+private Impiegato [] impiegati;
 
 //--------COSTRUTTORE-----------------
-public Ufficio1  (Impiegato [] arrImpP)
-	{
-		Impiegato [] arrImp  = arrImpP;
+public Ufficio1 (Impiegato[] impiegati){
+		this.impiegati = impiegati;
 	}
-
-
-public void setArr(Impiegato [] arrImp) {
-    Impiegato [] arrImpP =arrImp;
-  }
-
- 	
-	
-//public Impiegato [] getArr()
-//	{return arrImp;}
-
+//--------METODI--------------------------------------	
+	public Impiegato[] getImpiegati(){
+		return impiegati;
+	}
 	
 //---------METODI---------------------
 
-public void getNomeImpiegato (String nomeImpiegatoP)
+public void setNomeImpiegato (String nomeImpiegatoP)
 	{
 		for(int i = 0; i < arrImp.length; i++)
 		{
@@ -52,7 +39,9 @@ public void getNomeImpiegato (String nomeImpiegatoP)
 			nomeImpiegatoP = tempNome.getNome();
 		}
 	}	
-
+public String getNomeImpiegato(){
+		return nomeImpiegatoP;
+	}
 
 /*	
 public int getStipendioImpiegato (int stipendioImpiegato)
