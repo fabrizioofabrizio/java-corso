@@ -67,7 +67,7 @@ public class CompactDisc {
 
 	
 	
-//--------popola l'array due per il costruttore due	
+//--------popola l'array------------------	
 	public void setTracce()
 	{
 	for (int i = 0; i < canzoni.length; i++)
@@ -79,7 +79,7 @@ public class CompactDisc {
 	}
 
 
-//-----------cerca la traccia all'interno dell'array del costruttore uno	
+//-----------cerca la traccia all'interno dell'array----------------------	
 	public int setCercaTracce(String nomeTraccia)
 	{
 		
@@ -94,7 +94,7 @@ public class CompactDisc {
 
 
 	
-//--------------due metodi stampa per il costruttire uno e due
+//--------------stampa-----------------------------------------------
 	public void stampa()
 	{
 		System.out.println("Titolo " + titolo + "\nAutore " + autore + "\nAnno " + anno );
