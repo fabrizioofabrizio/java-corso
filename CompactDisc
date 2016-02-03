@@ -1,0 +1,140 @@
+/*
+
+Scrivere una classe  che rappresenti un compact disc tramite gli attributi opportuni:
+titolo, autore, anno di uscita e elenco delle canzoni. 
+
+Creare un costruttore che inizializzi tutti gli attributi con 
+passaggio di parametri
+e un costruttore che prenda il numero delle 
+tracce in input e inizializzi l'attributo canzoni in automatico 
+(ad esempio le tracce avranno nome del tipo: Track1, Track2 etc)
+
+Scrivere i metodi:
+get e set delle variabili istanza
+un metodo per la stampa dello stato degli attributi
+un metodo che trova il numero della traccia dato il nome
+Scrivere un main per testare la classe in modo da usare i due costruttori, 
+il metodo stampa e il metodo di ricerca della traccia
+*/
+
+
+import java.util.Scanner;
+
+public class CompactDisc {
+
+
+//------attributi
+	String titolo;
+	String autore;
+	int anno;
+	String [] canzoni;
+
+	
+//------costruttore Uno
+	public CompactDisc(String titoloP, String autoreP, int annoP){
+
+	titolo = titoloP;
+	autore = autoreP;
+	anno = annoP;
+	canzoni = new String []{ new String("x"), 
+							new String ("y"),
+							new String ("z")
+		
+	};
+
+	}
+
+
+//------costruttore Due
+	public CompactDisc(int numeroP){
+	
+	titolo = "fabry";
+	autore = "priami";
+	anno = 2016;
+	
+	canzoni = new String[numeroP];
+	}
+	
+	
+	public String getTitolo()
+	{ return titolo;}
+
+	public String getAutore()
+	{ return autore;}
+
+	public int getAnno()
+	{ return anno;}
+
+	
+	
+//--------popola l'array due per il costruttore due	
+	public void setTracce()
+	{
+	for (int i = 0; i < canzoni.length; i++)
+		{
+			int tempI = i + 1;
+			String temp = "Track" + tempI;
+			canzoni[i] = temp;
+		}	
+	}
+
+
+//-----------cerca la traccia all'interno dell'array del costruttore uno	
+	public int setCercaTracce(String nomeTraccia)
+	{
+		
+		for (int i = 0; i < canzoni.length; i++)
+			{
+				int tempI = i +1;
+			if (nomeTraccia.equals(canzoni[i]))
+				{return tempI;}
+			}
+		return -1;
+	}
+
+
+	
+//--------------due metodi stampa per il costruttire uno e due
+	public void stampa()
+	{
+		System.out.println("Titolo " + titolo + "\nAutore " + autore + "\nAnno " + anno );
+	
+		for(int i = 0; i < canzoni.length; i++)
+		{
+			System.out.println("Traccia: " + canzoni[i]);
+		}	
+	}
+
+
+
+
+
+
+public static void main  (String [] args){
+		
+		Scanner input = new Scanner(System.in);	
+		
+		System.out.println("CD pieno");
+		System.out.println();
+		
+		CompactDisc Cd = new CompactDisc ("faby", "cd", 2016);
+		Cd.stampa();
+		
+		System.out.println("nome della traccia da cercare");
+		int traccia = Cd.setCercaTracce(input.nextLine());
+		System.out.println("la posizione della traccia e' " + traccia);
+		
+		System.out.println("Tracce CD");
+		CompactDisc Cd2 = new CompactDisc (10);
+
+		Cd2.setTracce();
+		Cd2.stampa();
+		
+		System.out.println("nome della traccia da cercare");
+		traccia = Cd2.setCercaTracce(input.nextLine());
+		
+		System.out.println("la posizione della traccia e' " + traccia);
+	}
+	
+	
+}
